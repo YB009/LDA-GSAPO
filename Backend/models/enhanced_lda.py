@@ -4,6 +4,8 @@ from gensim.models.coherencemodel import CoherenceModel
 from gensim.models.ldamodel import LdaModel
 from gensim.models.ldamulticore import LdaMulticore
 import logging
+import joblib
+
 
 logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
 
@@ -78,3 +80,22 @@ class EnhancedLDA:
     def get_topics(self, num_words=10):
         """Return the discovered topics with their top words"""
         return self.lda_model.print_topics(num_words=num_words)
+    
+    
+def save(self, path):
+    """Save model and dictionary to disk"""
+    joblib.dump({
+        'model': self.lda_model,
+        'dictionary': self.dictionary,
+        'coherence': self.coherence_score
+    }, path)
+
+@classmethod
+def load(cls, path):
+    """Load pretrained model"""
+    data = joblib.load(path)
+    instance = cls()
+    instance.lda_model = data['model']
+    instance.dictionary = data['dictionary']
+    instance.coherence_score = data['coherence']
+    return instance

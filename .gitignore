@@ -9,3 +9,7 @@ node_modules/
 *.ipynb_checkpoints/
 data/processed/
 data/results/" > .gitignore
+# Model files
+*.pkl
+*.dict
+*.model
