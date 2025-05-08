@@ -6,8 +6,13 @@ import os
 import logging
 from werkzeug.utils import secure_filename
 import nltk
+import json
 
-nltk.download('popular')
+
+# Ensure downloads happen even if someone runs app.py first
+nltk.download('punkt', quiet=True)
+nltk.download('stopwords', quiet=True)
+nltk.download('wordnet', quiet=True)
 # Configure logging
 logging.basicConfig(
     format='%(asctime)s : %(levelname)s : %(message)s',
