@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import UploadPanel from '../components/UploadPanel';
-import ResultsView from '../components/ResultsView';
-import TopicVisualization from './TopicVisualization.jsx';
+import UploadPanel from './UploadPanel/UploadPanel.jsx';
+import ResultsView from './ResultsView/ResultsView.jsx';
+import TopicVisualization from './ResultsView/TopicVisualization.jsx';
 
 const DemoPage = () => {
     const [results, setResults] = useState(null);

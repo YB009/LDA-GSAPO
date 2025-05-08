@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HomePage from './pages/Home';
-import DemoPage from './pages/Demo';
-import NavBar from './components/NavBar';
+import Home from './pages/Home/Home';  // Changed from './pages/Home'
+import Demo from './pages/Demo/Demo';  // Changed from './pages/Demo'
+import NavBar from './components/NavBar/NavBar';  // Changed from './components/NavBar'
 import './styles/main.css';
 
 function App() {
@@ -11,8 +11,8 @@ function App() {
       {/* NavBar should wrap around Routes to appear on all pages */}
       <NavBar />
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/demo" element={<DemoPage />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/demo" element={<Demo />} />
       </Routes>
     </Router>
   );

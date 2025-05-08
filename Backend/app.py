@@ -5,7 +5,9 @@ from models.preprocessing import TextPreprocessor
 import os
 import logging
 from werkzeug.utils import secure_filename
+import nltk
 
+nltk.download('popular')
 # Configure logging
 logging.basicConfig(
     format='%(asctime)s : %(levelname)s : %(message)s',
